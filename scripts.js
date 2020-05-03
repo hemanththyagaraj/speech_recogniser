@@ -5,20 +5,20 @@ const pexelsApiKey = `563492ad6f917000010000010bd4fa0fb39949f58ffb7478067c35a8`;
 const galleryContainer = document.querySelector(".gallery__container");
 const loader = document.querySelector(".spinner");
 const noResults = document.querySelector(".no__results");
-const speaker = window.speechSynthesis; 
+const speaker = window.speechSynthesis;
 
 //show the listeninng animation on click of tap to speak button
 btnSpeak.addEventListener("click", () => {
   listenerAnimation.className = "listening__container show";
-  btnSpeak.setAttribute('disabled', true)
+  btnSpeak.setAttribute("disabled", true);
   recognition.start();
 });
 
 //get images from pexels
 const searchImagesBySpeech = async (query) => {
   if (!query) {
-    window.alert("Please speak out load");
     loader.className = "spinner hide";
+    window.alert("Please speak out load");
     return;
   }
 
@@ -99,16 +99,16 @@ const addImageToGallery = (src, photographer) => {
 };
 
 const speakOutPhotographerName = (name) => {
-    const utterance = new SpeechSynthesisUtterance(name)
-    speaker.speak((utterance))
+  const utterance = new SpeechSynthesisUtterance(name);
+  speaker.speak(utterance);
 };
 
 recognition.addEventListener("result", handleSpeakResult);
 recognition.addEventListener("end", function (e) {
   closeListenerAnimation();
-  btnSpeak.removeAttribute('disabled')
+  btnSpeak.removeAttribute("disabled");
 });
 
-listenerAnimation.addEventListener('click', () => {
-    listenerAnimation.className = 'listening__container hide'
-})
+listenerAnimation.addEventListener("click", () => {
+  listenerAnimation.className = "listening__container hide";
+});
