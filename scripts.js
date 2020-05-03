@@ -18,6 +18,7 @@ btnSpeak.addEventListener("click", () => {
 const searchImagesBySpeech = async (query) => {
   if (!query) {
     window.alert("Please speak out load");
+    loader.className = "spinner hide";
     return;
   }
 
