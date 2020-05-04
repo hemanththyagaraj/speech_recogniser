@@ -40,6 +40,7 @@ const searchImagesBySpeech = async (query) => {
       }
     })
     .catch((err) => {
+    loader.className = "spinner hide";
       window.alert("Something went wrong");
     });
 };
