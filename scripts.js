@@ -1,7 +1,7 @@
 const btnSpeak = document.querySelector(".btn__speak");
 const listenerAnimation = document.querySelector(".listening__container");
 const recognition = new webkitSpeechRecognition();
-const pexelsApiKey = `563492ad6f917000010000010bd4fa0fb39949f58ffb7478067c35a8`;
+const pexelsApiKey = ``;
 const galleryContainer = document.querySelector(".gallery__container");
 const loader = document.querySelector(".spinner");
 const noResults = document.querySelector(".no__results");
